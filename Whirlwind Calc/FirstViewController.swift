@@ -11,9 +11,11 @@ import UIKit
 class FirstViewController: UIViewController {
     
     
+    @IBOutlet weak var outputTable: UITableView!
     @IBOutlet weak var oneSide: UITextField!
     @IBOutlet weak var twoSide: UITextField!
     @IBOutlet weak var threeSide: UITextField!
+    @IBOutlet weak var fourSide: UITextField!
     @IBOutlet weak var outputView: UITextView!
     @IBOutlet weak var calcButton: UIButton!
     
@@ -21,7 +23,8 @@ class FirstViewController: UIViewController {
         let first:Double = Double(oneSide.text!)!
         let second:Double = Double(twoSide.text!)!
         let third:Double = Double(threeSide.text!)!
-        return [first, second, third]
+        let fourth:Double = Double(fourSide.text!)!
+        return [first, second, third, fourth]
     }
     
     @IBAction func calcButton(_ sender: UIButton) {
@@ -51,7 +54,7 @@ class FirstViewController: UIViewController {
         Pickets (8" solid board) = \(picketSolidEight)
         """
     }
-    /* 8ft sec;tions = \(eightSectTotal) */
+    /* 8ft sections = \(eightSectTotal) */
     
     func roundToMultipleOfSix(value: Int) -> Int {
         let number = Double(value)
@@ -86,6 +89,17 @@ class FirstViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+       // outputTable.dataSource = self
         }
+   /* func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 8
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+    } */
 }
 
